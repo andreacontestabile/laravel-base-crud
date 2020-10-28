@@ -77,7 +77,7 @@ class BookController extends Controller
     public function show($id)
     {
         $book = Book::find($id);
-        
+
         return view("show", ["book" => $book]);
     }
 
@@ -88,8 +88,10 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $book = Book::find($id);
+
+        return view("edit", ["book" => $book]);
     }
 
     /**
@@ -101,7 +103,23 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $book = Book::find($id);
+
+        $book->title = $data["title"];
+        $book->author = $data["author"];
+        $book->edition = $data["edition"];
+        $book->isbn = $data["isbn"];
+        $book->year = $data["year"];
+        $book->genre = $data["genre"];
+        $book->pages = $data["pages"];
+        $book->image = $data["image"];
+
+        $book->save();
+
+        return redirect()->route("books.show", $id);
+
+
     }
 
     /**
