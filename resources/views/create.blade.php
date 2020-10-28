@@ -1,72 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Create</title>
-</head>
-<body>
+@extends("layouts.main")
 
-  <h1>Aggiungi un nuovo libro</h1>
+@section('title')
+Aggiungi un nuovo libro
+@endsection
 
-  <form action="{{route("books.store")}}" method="POST">
-    @csrf
-    @method("POST")
+@section('mainContent')
+<h1>Aggiungi un nuovo libro</h1>
 
-    <div>
-      <label for="title">Titolo:</label>
-      <input type="text" name="title" id="title" maxlength="30" required>
-    </div>
-    
-    <div>
-      <label for="author">Autore:</label>
-      <input type="text" name="author" id="author" maxlength="30" required>
-    </div>
+<form action="{{route("books.store")}}" method="POST">
+  @csrf
+  @method("POST")
 
-    <div>
-      <label for="edition">Edizione:</label>
-      <input type="text" name="edition" id="edition" maxlength="30" required>
-    </div>
-
-    <div>
-      <label for="isbn">Codice ISBN:</label>
-      <input type="text" name="isbn" id="isbn" size="13" required>
-    </div>
-
-    <div>
-      <label for="year">Data di Pubblicazione:</label>
-      <input type="date" name="year" id="year" required>
-    </div>
-
-    <div>
-      <label for="genre">Genere:</label>
-      <input type="text" name="genre" id="genre" maxlength="30" required>
-    </div>
-
-    <div>
-      <label for="pages">N° pagine:</label>
-      <input type="number" name="pages" id="pages" required>
-    </div>
-
-    <div>
-      <label for="image">Link immagine copertina:</label>
-      <input type="text" name="image" id="image" required>
-    </div>
-
-    <input type="submit" value="Aggiungi">
-
-    @if ($errors->any())
-      <div>
-          <ul>
-              @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-              @endforeach
-          </ul>
-      </div>
-    @endif
-
-  </form>
+  <div>
+    <label for="title">Titolo:</label>
+    <input type="text" name="title" id="title" maxlength="30" required>
+  </div>
   
-</body>
-</html>
+  <div>
+    <label for="author">Autore:</label>
+    <input type="text" name="author" id="author" maxlength="30" required>
+  </div>
+
+  <div>
+    <label for="edition">Edizione:</label>
+    <input type="text" name="edition" id="edition" maxlength="30" required>
+  </div>
+
+  <div>
+    <label for="isbn">Codice ISBN:</label>
+    <input type="text" name="isbn" id="isbn" size="13" required>
+  </div>
+
+  <div>
+    <label for="year">Data di Pubblicazione:</label>
+    <input type="date" name="year" id="year" required>
+  </div>
+
+  <div>
+    <label for="genre">Genere:</label>
+    <input type="text" name="genre" id="genre" maxlength="30" required>
+  </div>
+
+  <div>
+    <label for="pages">N° pagine:</label>
+    <input type="number" name="pages" id="pages" required>
+  </div>
+
+  <div>
+    <label for="image">Link immagine copertina:</label>
+    <input type="text" name="image" id="image" required>
+  </div>
+
+  <input type="submit" value="Aggiungi">
+
+  @if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
+
+</form>
+@endsection

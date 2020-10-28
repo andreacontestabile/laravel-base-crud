@@ -1,0 +1,51 @@
+main {
+  height: calc(100vh - 80px);
+  padding: 80px 0;
+  background-color: $mainBgColor;
+  overflow-y:auto;
+
+  .book-list {
+
+    .book-list-item {
+      padding: 40px;
+      margin-bottom: 40px;
+      background-color: $headerColor;
+      border-radius: 5px;
+      text-align:center;
+
+      div {
+        height: 40px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      img {
+        height: 400px;
+        margin-bottom: 20px;
+      }
+
+      a:first-child {
+        margin-right: 20px;
+      }
+
+      input[type=submit] {
+        cursor: pointer;
+      }
+    }
+
+    .book-info-list {
+      color: $whiteColor;
+      margin-bottom: 20px;
+
+      .book-info-list-item {
+        font-weight: 100;
+
+        span {
+          font-weight: 700;
+        }
+      }
+      
+    }
+  }
+}

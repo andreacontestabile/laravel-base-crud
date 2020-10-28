@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <a href="{{route("books.index")}}">Torna all'Indice</a>
   
   <ul>
     <img src="{{$book->image}}" alt="">
@@ -21,7 +22,7 @@
     <form action="{{route("books.destroy", $book->id)}}" method="POST">
       @csrf
       @method("DELETE")
-      
+
       <input type="submit" value="Elimina">
     </form>
   </ul>

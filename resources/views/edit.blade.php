@@ -9,6 +9,9 @@
 <body>
 
   <h1>Modifica di un libro esistente</h1>
+
+  <a href="{{route("books.index")}}">Torna all'Indice</a>
+
   <form action="{{route("books.update", $book->id)}}" method="POST">
     @csrf
     @method("PUT")
@@ -58,7 +61,7 @@
     </div>
 
     <input type="submit" value="Salva modifiche">
-    
+
     <form action="{{route("books.destroy", $book->id)}}" method="POST">
       @csrf
       @method("DELETE")

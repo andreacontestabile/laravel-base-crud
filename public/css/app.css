@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;
+
+0,700;1,100&display=swap);* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+input[type=submit] {
+  padding: 10px 20px;
+  color: #002b5c;
+  background-color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  color: #002b5c;
+  background-color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+a:hover,
+input[type=submit]:hover {
+  color: #fff;
+  background-color: #2991d6;
+}
+
+header {
+  height: 80px;
+  background-color: #002b5c;
+  line-height: 80px;
+  text-align: center;
+}
+
+main {
+  height: calc(100vh - 80px);
+  padding: 80px 0;
+  background-color: #99ccff;
+  overflow-y: auto;
+}
+
+main .book-list .book-list-item {
+  padding: 40px;
+  margin-bottom: 40px;
+  background-color: #002b5c;
+  border-radius: 5px;
+  text-align: center;
+}
+
+main .book-list .book-list-item div {
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+main .book-list .book-list-item img {
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+main .book-list .book-list-item a:first-child {
+  margin-right: 20px;
+}
+
+main .book-list .book-list-item input[type=submit] {
+  cursor: pointer;
+}
+
+main .book-list .book-info-list {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+main .book-list .book-info-list .book-info-list-item {
+  font-weight: 100;
+}
+
+main .book-list .book-info-list .book-info-list-item span {
+  font-weight: 700;
+}
+
