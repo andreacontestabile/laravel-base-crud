@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Book;
 
 class BookController extends Controller
@@ -44,7 +45,7 @@ class BookController extends Controller
                 "title" => "required|max:30",
                 "author"=> "required|max:30",
                 "edition" => "required|max:30",
-                "isbn" => "required|unique:books|max:13",
+                "isbn" => "required|unique:books|size:13",
                 "year" => "required|date|",
                 "genre" => "required|max:30",
                 "pages" => "required|integer",
@@ -105,6 +106,21 @@ class BookController extends Controller
     {
         $data = $request->all();
         $book = Book::find($id);
+
+        $request->validate(
+            [
+                "title" => "required|max:30",
+                "author"=> "required|max:30",
+                "edition" => "required|max:30",
+                "isbn" => ["required",
+                            Rule::unique('books')->ignore($id),
+                            "size:13"],
+                "year" => "required|date|",
+                "genre" => "required|max:30",
+                "pages" => "required|integer",
+                "image" => "required"
+            ]
+        );
 
         $book->title = $data["title"];
         $book->author = $data["author"];

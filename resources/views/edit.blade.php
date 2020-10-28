@@ -34,7 +34,7 @@
 
     <div>
       <label for="isbn">Codice ISBN:</label>
-      <input type="text" name="isbn" id="isbn" value="{{$book->isbn}}" maxlength="13" required>
+      <input type="text" name="isbn" id="isbn" value="{{$book->isbn}}" size="13" required>
     </div>
 
     <div>
