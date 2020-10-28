@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{$book->title}}</title>
-</head>
-<body>
+@extends("layouts.main")
 
-  <a href="{{route("books.index")}}">Torna all'Indice</a>
-  
-  <ul>
+@section('title')
+    {{$book->title}}
+@endsection
+
+@section('mainContent')
+<div class="container">
+  <li class="book-list-item">
     <img src="{{$book->image}}" alt="">
-    <li>Titolo: {{$book->title}}</li>
-    <li>Autore: {{$book->author}}</li>
-    <li>Edizione: {{$book->edition}}</li>
-    <li>Codice ISBN: {{$book->isbn}}</li>
-    <li>Data di Pubblicazione: {{$book->year}}</li>
-    <li>Genere: {{$book->genre}}</li>
-    <li>N° Pagine: {{$book->pages}}</li>
+    <div>
+      <a href="{{route("books.edit", $book->id)}}">Modifica scheda</a>
+    </div>
+    <ul class="book-info-list">
+      <li class="book-info-list-item"><span>Titolo:</span> {{$book->title}}</li>
+      <li class="book-info-list-item"><span>Autore:</span> {{$book->author}}</li>
+      <li class="book-info-list-item"><span>Edizione:</span> {{$book->edition}}</li>
+      <li class="book-info-list-item"><span>Codice ISBN:</span> {{$book->isbn}}</li>
+      <li class="book-info-list-item"><span>Data di Pubblicazione:</span> {{$book->year}}</li>
+      <li class="book-info-list-item"><span>Genere:</span> {{$book->genre}}</li>
+      <li class="book-info-list-item"><span>N° Pagine:</span> {{$book->pages}}</li>
+    </ul>
     <form action="{{route("books.destroy", $book->id)}}" method="POST">
       @csrf
       @method("DELETE")
-
+  
       <input type="submit" value="Elimina">
     </form>
-  </ul>
-  
-  
-</body>
-</html>
+  </li>
+</div>
+
+
+@endsection

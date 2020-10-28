@@ -4,7 +4,6 @@ main {
   background-color: $mainBgColor;
   overflow-y:auto;
 
-  .book-list {
 
     .book-list-item {
       padding: 40px;
@@ -12,6 +11,7 @@ main {
       background-color: $headerColor;
       border-radius: 5px;
       text-align:center;
+      list-style: none;
 
       div {
         height: 40px;
@@ -47,5 +47,5 @@ main {
       }
       
     }
-  }
 }
+

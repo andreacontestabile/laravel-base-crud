@@ -5,9 +5,11 @@ Aggiungi un nuovo libro
 @endsection
 
 @section('mainContent')
-<h1>Aggiungi un nuovo libro</h1>
 
-<form action="{{route("books.store")}}" method="POST">
+<div class="container">
+  <h1>Aggiungi un nuovo libro</h1>
+
+<form action="{{route("books.store")}}" method="POST" class="form" id="create">
   @csrf
   @method("POST")
 
@@ -65,3 +67,5 @@ Aggiungi un nuovo libro
 
 </form>
 @endsection
+
+</div>
