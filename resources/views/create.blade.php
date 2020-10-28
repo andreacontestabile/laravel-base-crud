@@ -16,42 +16,42 @@
 
     <div>
       <label for="title">Titolo:</label>
-      <input type="text" name="title" id="title">
+      <input type="text" name="title" id="title" maxlength="30" required>
     </div>
     
     <div>
       <label for="author">Autore:</label>
-      <input type="text" name="author" id="author">
+      <input type="text" name="author" id="author" maxlength="30" required>
     </div>
 
     <div>
       <label for="edition">Edizione:</label>
-      <input type="text" name="edition" id="edition">
+      <input type="text" name="edition" id="edition" maxlength="30" required>
     </div>
 
     <div>
       <label for="isbn">Codice ISBN:</label>
-      <input type="text" name="isbn" id="isbn">
+      <input type="text" name="isbn" id="isbn" maxlength="13" required>
     </div>
 
     <div>
       <label for="year">Data di Pubblicazione:</label>
-      <input type="date" name="year" id="year">
+      <input type="date" name="year" id="year" required>
     </div>
 
     <div>
       <label for="genre">Genere:</label>
-      <input type="text" name="genre" id="genre">
+      <input type="text" name="genre" id="genre" maxlength="30" required>
     </div>
 
     <div>
       <label for="pages">N° pagine:</label>
-      <input type="number" name="pages" id="pages">
+      <input type="number" name="pages" id="pages" required>
     </div>
 
     <div>
       <label for="image">Link immagine copertina:</label>
-      <input type="text" name="image" id="image">
+      <input type="text" name="image" id="image" required>
     </div>
 
     <input type="submit" value="Aggiungi">
