@@ -14,7 +14,9 @@
     <li>Titolo: {{$book->title}}</li>
     <li>Autore: {{$book->author}}</li>
     <li>Edizione: {{$book->edition}}</li>
+    <li>Codice ISBN: {{$book->isbn}}</li>
     <li>Data di Pubblicazione: {{$book->year}}</li>
+    <li>Genere: {{$book->genre}}</li>
     <li>N° Pagine: {{$book->pages}}</li>
   </ul>
   @endforeach
