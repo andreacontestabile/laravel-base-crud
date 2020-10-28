@@ -131,7 +131,7 @@ class BookController extends Controller
         $book->pages = $data["pages"];
         $book->image = $data["image"];
 
-        $book->save();
+        $book->update();
 
         return redirect()->route("books.show", $id);
 
@@ -146,6 +146,10 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::find($id);
+
+        $book->delete();
+
+        return redirect()->route("books.index");
     }
 }

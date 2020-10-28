@@ -18,6 +18,12 @@
     <li>Data di Pubblicazione: {{$book->year}}</li>
     <li>Genere: {{$book->genre}}</li>
     <li>N° Pagine: {{$book->pages}}</li>
+    <form action="{{route("books.destroy", $book->id)}}" method="POST">
+      @csrf
+      @method("DELETE")
+      
+      <input type="submit" value="Elimina">
+    </form>
   </ul>
   @endforeach
   

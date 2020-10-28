@@ -58,6 +58,13 @@
     </div>
 
     <input type="submit" value="Salva modifiche">
+    
+    <form action="{{route("books.destroy", $book->id)}}" method="POST">
+      @csrf
+      @method("DELETE")
+      
+      <input type="submit" value="Elimina">
+    </form>
 
     @if ($errors->any())
       <div>
